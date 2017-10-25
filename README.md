@@ -23,7 +23,7 @@ Systembetreiber müssen ein Ergonomisches System aufbauen bzw. die Ergonomie mus
 1:Als reisender möchte ich mein auto eine Woche Parken um es sicher in der nähe des Reiseanfangs zu Parken.<br>
 2:Als Pendler Parke ich mein Auto jeden Tag 8 Stunden weil es nah an der Arbeit liegt der Arbeit.<br>
 3:Als Frau Parke ich mein Auto in einem Parkhaus weil ich mich dort sicherer fühle als auf offenen Parkplätzen.<br>
-4:Als Student möchte ich mein Auto in dem Parkhaus Parken weil es dort Billiger ist als bei den anderen Parkmöglichkeinten.<br>
+4:Als Kunde möchte ich wissen wie viel ich bezhalen muss, um meine Schulden zu begleichen.<br>
 5:Als Kunde benötige ich ein Parkhaus um mein Auto vor Witterung zu schützen.<br>
 6:Als Fahrlehrer Möchte Parkhaus nutzen um meine Fahrschüler auf Enge Parklücken zu trainieren.<br>
 7:Als Behinderter benötige ich Parkpklätze die Groß genug sind für mich um einzuparken.<br>
