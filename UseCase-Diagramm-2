@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Kunde
+actor Schrankwaerter
+actor Kassierer
+actor Platzeinweiser
+actor Manager
+
+rectangle Parkhaus {
+    Kunde -- (einfahren)
+    Kunde -- (Platz zugewiesen bekommen)
+    Kunde -- (bezahlen)
+    Kunde -- (herrausfahren)
+    Kunde -- (Wechselgeld bekommen)
+    Kunde -- (Notfall melden)
+    (herrausfahren) -- Schrankwaerter
+    (einfahren) -- Schrankwaerter
+    (bezahlen) -- Kassierer
+    (Platz zugewiesen bekommen) -- Platzeinweiser
+    (Statistik ansehen) -- Manager
+    (Informationen speichern) -- Manager
+
+    (herrausfahren dürfen) <|-- (bezahlen)
+    (herrausfahren dürfen) <|-- (Notfall melden)
+
+    (Informationen speichern) <. (einfahren) : <<include>>  
+    (Platz zugewiesen bekommen) <. (einfahren) : <<include>>  
+    (herrausfahren dürfen) <. (herrausfahren) : <<include>>  
+    (bezahlen) .> (Wechselgeld bekommen) : <<include>>
+}
+@enduml
