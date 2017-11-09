@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+actor User
+
+
+rectangle Parkhaus{
+control ParkhausController
+boundary Eingabemaske
+boundary Ausgabemaske
+boundary Kassenautomat
+entity Kunde
+entity Stellplatz
+entity Bezahlung
+
+
+entity Preis
+entity Oeffnungszeiten
+entity Platzstatus
+
+ParkhausController .up.> Eingabemaske
+ParkhausController .up.> Ausgabemaske
+ParkhausController ..> Stellplatz
+ParkhausController ..> Kunde
+ParkhausController ..> Bezahlung
+ParkhausController .up.> Kassenautomat
+ParkhausController ..> Preis
+ParkhausController ..> Oeffnungszeiten
+ParkhausController ..> Platzstatus
+
+User -- Eingabemaske
+User -- Ausgabemaske
+User -- Kassenautomat
+}
+@enduml
