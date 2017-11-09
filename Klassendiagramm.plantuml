@@ -1,0 +1,68 @@
+@startuml
+class Parkhaus {
+  name : String
+}
+class Manager {
+    - offnungszei: int[]
+    - stellPlaetze: int
+    - kassenstand: int
+    - einnahmen: int[]
+    - kunden: Kunde[]
+    - kassierer: Kassierer
+    - einweiser: Einweiser
+    - schrankwarter: Schrankenwarter
+
+    + Manager(anzahl_Stellplatze: int, kassenstand: int)
+    + getOffungszeit(): int[]
+    + getStellplatze(): int
+    + getKassenstand(): int
+    + getEinnahmen(): int[]
+    + einnahmen(zeitraumBeginn: String, zeitraumEnde: String)
+    + getKunden(): Kunde[]
+    + setKunden(Kunden: Kunde[])
+    + getSchrankwarter(): Schrankwarter
+}
+class Kassierer {
+
+    + kassieren(): int
+}
+class Einweiser {
+    platz: Stellplatz[][]
+
+    + getStellplatz(): String
+}
+class Schrankenwarter {
+
+    + einfahren()
+    + schranke_schließen()
+    + schranke_offnen()
+    + ausfahren()
+}
+class Stellplatz {
+    vergeben: boolean
+    bezeichnung: String
+
+    + Stellplatz()
+    + getVergeben(): boolean
+    + getBezeichnung(): String
+    + setVergeben(vergeben: boolean)
+}
+class Kunde {
+    ankunftsZeit: int
+    hatBezahlt: boolean
+    KNr: int
+
+    + getAnkunftszeit(): int
+    + setAnkunftszeit(ankunftszeit: int)
+    + getHatBezahlt(): boolean
+    + setHatBezahlt(hatBezahlt: boolean)
+    + getKNr(): int
+    + setKNr(KNr: int)
+}
+Parkhaus "1..1" --> "0..*" Auto
+Manager o-- Kunde
+Einweiser o-- Stellplatz
+Manager --> Kassierer
+Manager --> Einweiser
+Manager --> Schrankenwarter
+@enduml
