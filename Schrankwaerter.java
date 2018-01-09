@@ -20,7 +20,7 @@ public class Schrankwaerter {
 	 Schranke_schließen();
  }
  public void ausfahren(Kunde k) throws InterruptedException{
-	 if(k.hatBezahlt){
+	 if(k.hatBezahlt()){
 		 einfahren();
 	 }
 	 else{
