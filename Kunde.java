@@ -1,13 +1,23 @@
-
+import java.util.Date;
+import java.text.SimpleDateFormat;
 public class Kunde {
   
   // Anfang Attribute
+  private static int count = 0;
     private long ankunftsZeit;
     private boolean hatBezahlt;
     private int KNr;
   // Ende Attribute
   
   // Anfang Methoden
+  Kunde(){
+	KNr = count;
+	count++;
+	SimpleDateFormat sdf = new SimpleDateFormat("HH");
+	String uhrzeit = sdf.format(new Date());
+	Ankunftszeit = Integer.parseInt(uhrzeit);
+}
+  
     public long getAnkunftsZeit() {
         return ankunftsZeit;
     }
