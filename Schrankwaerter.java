@@ -1,15 +1,18 @@
 
+
 public class Schrankwaerter {
-    public void einfahren(){
-        
-    }
-    public void schrankeOeffnen(){
-        
-    }
-    public void schrankeSchliessen(){
-        
-    }
-    public void ausfahren(){
-        
-    }
+ boolean Schranke = false;
+ //False = Schranke zu
+ public void Schranke_schließen(){
+	 Schranke = false;
+ }
+ public void Schranke_oeffnen(){
+	 Schranke = true;
+ }
+ public boolean getSchranke(){
+	 return Schranke;
+ }
+ 
+ 
 }
+
