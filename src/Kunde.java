@@ -69,7 +69,11 @@ public class Kunde {
     }
 
     public void notfall() {
-        notfall = true;
+        if (parkt)
+            notfall = true;
+        /* else: Wenn der Kunde nicht parkt d.h. das Parkhaus verlassen hat,
+        *        kann es keinen Notfall melden
+        */
     }
 
     public boolean isNotfall() {
