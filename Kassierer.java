@@ -7,10 +7,10 @@ public class Kassierer {
         	sdf = new SimpleDateFormat("HH");
     }
     
-    public int kassieren(Kunde k, int Preis){
+    public double kassieren(Kunde k, double Preis){
 		String uhrzeit = sdf.format(new Date());
 		int Jetzt = Integer.parseInt(uhrzeit);
-		int Rechnung = (k.getAnkunftsZeit() - Jetzt)*Preis;
+		double Rechnung = ((double)(k.getAnkunftsZeit() - Jetzt)) * Preis;
 		k.setHatBezahlt();
 		return Rechnung;
     }
