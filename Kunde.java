@@ -1,23 +1,25 @@
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
+
 public class Kunde {
-  
-  // Anfang Attribute
-  private static int count = 0;
+
+    // Anfang Attribute
+    private static int count = 0;
     private int ankunftsZeit;
     private boolean hatBezahlt;
     private int KNr;
-  // Ende Attribute
-  
-  // Anfang Methoden
-  Kunde(){
-	KNr = count;
-	count++;
-	SimpleDateFormat sdf = new SimpleDateFormat("HH");
-	String uhrzeit = sdf.format(new Date());
-	ankunftsZeit = Integer.parseInt(uhrzeit);
-}
-  
+    // Ende Attribute
+
+    // Anfang Methoden
+    Kunde() {
+        KNr = count;
+        count++;
+        SimpleDateFormat sdf = new SimpleDateFormat("HH");
+        String uhrzeit = sdf.format(new Date());
+        ankunftsZeit = Integer.parseInt(uhrzeit);
+    }
+
     public int getAnkunftsZeit() {
         return ankunftsZeit;
     }
@@ -41,5 +43,5 @@ public class Kunde {
     public void setKNr(int KNr) {
         this.KNr = KNr;
     }
-  // Ende Methoden
+    // Ende Methoden
 } // end of Kunde
