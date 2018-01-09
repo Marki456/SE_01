@@ -4,20 +4,20 @@ import java.util.List;
 public class Manager {
 
     // Anfang Attribute
-    int[] Oeffnungszeit = {0, 23};
-    int Stellplaetze;
-    int Kassenstand;
+    private int[] Oeffnungszeit = {0, 23};
+    private int Stellplaetze;
+    private int Kassenstand;
     private List<Einnahme>[] Einnahmen_1;
     private TemplateEinnahmen[] summen;
-    Kunde[] Kunden;
+    private Kunde[] Kunden;
 
-    Kassierer k = new Kassierer();
-    Einweiser e;
-    Schrankwaerter s = new Schrankwaerter();
+    private Kassierer k = new Kassierer();
+    private Einweiser e;
+    private Schrankwaerter s = new Schrankwaerter();
 
     // Ende Attribute
     // Anfang Methoden
-    Manager(int Kassenstand, int[] StellplatzeProEtage) {
+    public Manager(int Kassenstand, int[] StellplatzeProEtage) {
         e = Einweiser.einweiseranlegen(StellplatzeProEtage);
         this.Kassenstand = Kassenstand;
         Stellplaetze = 0;
@@ -29,7 +29,7 @@ public class Manager {
         summen[0] = new TagesEinnahmen();
         summen[1] = new WochenEinnahmen();
         summen[2] = new MonatsEinnahmen();
-        summen[4] = new JahresEinnahmen();
+        summen[3] = new JahresEinnahmen();
     }
 
     public int[] getOeffungszeiten() {
@@ -66,5 +66,8 @@ public class Manager {
         return s.getSchranke();
     }
 
+    public void addKunde(Kunde kunde) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     // Ende Methoden
 }
