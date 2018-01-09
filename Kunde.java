@@ -15,7 +15,7 @@ public class Kunde {
 	count++;
 	SimpleDateFormat sdf = new SimpleDateFormat("HH");
 	String uhrzeit = sdf.format(new Date());
-	Ankunftszeit = Integer.parseInt(uhrzeit);
+	ankunftsZeit = Integer.parseInt(uhrzeit);
 }
   
     public long getAnkunftsZeit() {
