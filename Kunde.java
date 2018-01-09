@@ -4,7 +4,7 @@ public class Kunde {
   
   // Anfang Attribute
   private static int count = 0;
-    private long ankunftsZeit;
+    private int ankunftsZeit;
     private boolean hatBezahlt;
     private int KNr;
   // Ende Attribute
@@ -18,11 +18,11 @@ public class Kunde {
 	ankunftsZeit = Integer.parseInt(uhrzeit);
 }
   
-    public long getAnkunftsZeit() {
+    public int getAnkunftsZeit() {
         return ankunftsZeit;
     }
 
-    public void setAnkunftsZeit(long ankunftsZeit) {
+    public void setAnkunftsZeit(int ankunftsZeit) {
         this.ankunftsZeit = ankunftsZeit;
     }
 
