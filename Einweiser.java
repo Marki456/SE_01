@@ -1,8 +1,10 @@
 
 public class Einweiser {
+	static Einweiser e;
 	Stellplatz[][] platz;
 	Einweiser(int[] StellplaetzeproEtage){
-		//suche größte Etage
+		
+		//suche grÃ¶ÃŸte Etage
 		int max = 0;
 		for(int i = 0; i < StellplaetzeproEtage.length;i++){
 			if(max < StellplaetzeproEtage[i]){
@@ -15,7 +17,8 @@ public class Einweiser {
 		for(int i = 0; i < StellplaetzeproEtage.length; i++){
 			for(int a = max-1; a>= StellplaetzeproEtage[i]-1;a--){
 				tmp[i][a].changevergeben();
-			}	
+			}
+		
 		}
 		//Gibt exestierenden Stellplaetzen einen Namen nach dem Muster Etage.Stellpaltz+1  --> z.B. 0.1 --> Etage = 0 Stellplatz = 1
 		for(int i = 0; i<tmp.length;i++){
@@ -27,9 +30,15 @@ public class Einweiser {
 		platz = tmp;
 		
 	}
+	public static final Einweiser einweiseranlegen(int[] StellplaetzeproEtage){
+		if(e == null){
+			e = new Einweiser(StellplaetzeproEtage);
+		}
+		return e;
+	}
 	
 	public String getStellplatz(){
-		//sucht freien Stellplatz, belget diesen und gibt diesen zurück
+		//sucht freien Stellplatz, belget diesen und gibt diesen zurÃ¼ck
 		
 		for(int i = platz.length-1; i >= 0;i--){
 			for(int a = 0; a < platz[0].length;a++){
@@ -39,7 +48,7 @@ public class Einweiser {
 				}
 			}
 		}
-		//Diese Ausgabe dürfte nicht auftauchen und deutet auf Fehler innerhalb des Managers 
+		//Diese Ausgabe dÃ¼rfte nicht auftauchen und deutet auf Fehler innerhalb des Managers 
 		return "No Free Spaces";
 	}
 	
@@ -59,3 +68,4 @@ public class Einweiser {
 		
 	}	
 }
+
