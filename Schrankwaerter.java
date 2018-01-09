@@ -14,9 +14,9 @@ public class Schrankwaerter {
  
  public void einfahren() throws InterruptedException{
 	 Schranke_oeffnen();
-	 System.out.println("A");
+
 	 Thread.sleep(3000);
-	 System.out.println("A");
+
 	 Schranke_schließen();
  }
  public void ausfahren(Kunde k) throws InterruptedException{
