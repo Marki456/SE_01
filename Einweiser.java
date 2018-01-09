@@ -12,7 +12,12 @@ public class Einweiser {
 			}
 		}
 		//legt Datenbank mit Stellplaetzen an
-		Stellplatz[][] tmp = new Stellplatz[StellplaetzeproEtage.length-1][max];
+		Stellplatz[][] tmp = new Stellplatz[StellplaetzeproEtage.length][max];
+		for(int i = 0; i < StellplaetzeproEtage.length; i++){
+			for(int j = 0; j < max; j++){
+				tmp[i][j] = new Stellplatz();
+			}
+		}
 		//streicht Stellplaetze  die in der Etage nicht vorkommen
 		for(int i = 0; i < StellplaetzeproEtage.length; i++){
 			for(int a = max-1; a>= StellplaetzeproEtage[i]-1;a--){
