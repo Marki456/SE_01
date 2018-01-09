@@ -12,20 +12,22 @@ public class Kunde {
     // Ende Attribute
 
     // Anfang Methoden
-    Kunde() {
+    public Kunde() {
         KNr = count;
         count++;
         SimpleDateFormat sdf = new SimpleDateFormat("HH");
         String uhrzeit = sdf.format(new Date());
         ankunftsZeit = Integer.parseInt(uhrzeit);
     }
+    
+    public Kunde(int ankunftsZeit){
+        KNr = count;
+        count++;
+        this.ankunftsZeit = ankunftsZeit;
+    }
 
     public int getAnkunftsZeit() {
         return ankunftsZeit;
-    }
-
-    public void setAnkunftsZeit(int ankunftsZeit) {
-        this.ankunftsZeit = ankunftsZeit;
     }
 
     public boolean hatBezahlt() {
