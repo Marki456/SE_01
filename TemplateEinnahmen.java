@@ -1,14 +1,17 @@
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public abstract class TemplateEinnahmen {
     public double summe(List<Einnahme> list) {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH");
+	String uhrzeitString = sdf.format(new Date());
+        int uhrzeit = Integer.parseInt(uhrzeitString);
         return list.stream()
-                .peek(einnahme -> System.out.println(System.nanoTime() - einnahme.getTimestamp() < zeitraum()))
-                .filter(einnahme -> System.nanoTime() - einnahme.getTimestamp() < zeitraum())
+                .filter(einnahme -> uhrzeit - einnahme.getTimestamp() < zeitraum())
                 .mapToDouble(einnahme -> einnahme.getBetrag())
                 .sum();
     }
 
-    public abstract long zeitraum();
+    public abstract int zeitraum();
 }

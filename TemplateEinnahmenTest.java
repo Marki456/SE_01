@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class TemplateEinnahmenTest {
     List<Einnahme> list;
@@ -24,13 +26,17 @@ public class TemplateEinnahmenTest {
     
     @Before
     public void setUp() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH");
+	String uhrzeitString = sdf.format(new Date());
+        int uhrzeit = Integer.parseInt(uhrzeitString);
+        
         list = new ArrayList<>();
-        list.add(new Einnahme(System.nanoTime(), 100));
-        list.add(new Einnahme(System.nanoTime() - 86400000000000L + 3600000000000L, 100));
-        list.add(new Einnahme(System.nanoTime() - 6L*86400000000000L, 100));
-        list.add(new Einnahme(System.nanoTime() - 29L*86400000000000L, 100));
-        list.add(new Einnahme(System.nanoTime() - 364L*86400000000000L, 100));
-        list.add(new Einnahme(System.nanoTime() - 400L*86400000000000L, 100));
+        list.add(new Einnahme(uhrzeit, 100));
+        list.add(new Einnahme(uhrzeit - 24 + 1, 100));
+        list.add(new Einnahme(uhrzeit - 6*24, 100));
+        list.add(new Einnahme(uhrzeit - 29*24, 100));
+        list.add(new Einnahme(uhrzeit - 364*24, 100));
+        list.add(new Einnahme(uhrzeit - 400*24, 100));
     }
     
     @After

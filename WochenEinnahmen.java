@@ -2,8 +2,8 @@
 public class WochenEinnahmen extends TemplateEinnahmen{
 
     @Override
-    public long zeitraum() {
-        return 7L*86400000000000L;
+    public int zeitraum() {
+        return 7*24;
     }
     
 }
