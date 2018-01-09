@@ -10,6 +10,7 @@ public class Kunde {
     private boolean hatBezahlt;
     private int KNr;
     private boolean parkt;
+    private boolean notfall;
     // Ende Attribute
 
     // Anfang Methoden
@@ -17,6 +18,7 @@ public class Kunde {
         KNr = count;
         count++;
         parkt = true;
+        notfall = false;
         SimpleDateFormat sdf = new SimpleDateFormat("HH");
         String uhrzeit = sdf.format(new Date());
         ankunftsZeit = Integer.parseInt(uhrzeit);
@@ -26,6 +28,7 @@ public class Kunde {
         KNr = count;
         count++;
         parkt = true;
+        notfall = false;
         this.ankunftsZeit = ankunftsZeit;
     }
 
@@ -33,7 +36,8 @@ public class Kunde {
     public String toString() {
         String hatbez = hatBezahlt? "ja    " : "nein";
         String hatver = parkt? "nein" : "ja    ";
-        return String.format("%s %02d \t %s %02d %s \t %s %s \t %s %s", "Kunde", KNr, "Ankunftszeit:", ankunftsZeit, "Uhr", "Hat bezahlt:", hatbez, "Hat verlassen:", hatver);
+        String hatnf = notfall? "ja    " : "nein";
+        return String.format("%s %02d \t %s %02d %s \t %s %s \t %s %s \t %s %s", "Kunde", KNr, "Ankunftszeit:", ankunftsZeit, "Uhr", "Hat bezahlt:", hatbez, "Hat Notfall:", hatnf, "Hat verlassen:", hatver);
     }
 
     public int getAnkunftsZeit() {
@@ -62,6 +66,14 @@ public class Kunde {
     
     public boolean istParkt() {
         return parkt;
+    }
+
+    public void notfall() {
+        notfall = true;
+    }
+
+    public boolean isNotfall() {
+        return notfall;
     }
     // Ende Methoden
 
