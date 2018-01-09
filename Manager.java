@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Manager {
@@ -9,7 +10,7 @@ public class Manager {
     private int Kassenstand;
     private List<Einnahme>[] Einnahmen_1;
     private TemplateEinnahmen[] summen;
-    private Kunde[] Kunden;
+    private List<Kunde> kunden;
 
     private Kassierer k = new Kassierer();
     private Einweiser e;
@@ -24,6 +25,8 @@ public class Manager {
         for (int i = 0; i < StellplatzeProEtage.length; i++) {
             Stellplaetze = StellplatzeProEtage[i] + Stellplaetze;
         }
+        
+        kunden = new ArrayList<>();
         
         summen = new TemplateEinnahmen[4];
         summen[0] = new TagesEinnahmen();
@@ -54,12 +57,8 @@ public class Manager {
 
     }
 
-    public Kunde[] getKunden() {
-        return Kunden;
-    }
-
-    public void setKunden(Kunde[] Kunden) {
-        this.Kunden = Kunden;
+    public List<Kunde> getKunden() {
+        return kunden;
     }
 
     public boolean getSchrankwaerter() {
@@ -67,7 +66,7 @@ public class Manager {
     }
 
     public void addKunde(Kunde kunde) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        kunden.add(kunde);
     }
     // Ende Methoden
 }
