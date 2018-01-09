@@ -7,7 +7,7 @@ public class Schrankwaerter {
     }
 
     public void ausfahren(Kunde k) throws KundeHatNichtBezahltException {
-        if (k.hatBezahlt())
+        if (k.hatBezahlt() || k.hatNotfall())
             k.verlassen();
         else
             throw new KundeHatNichtBezahltException();

@@ -76,7 +76,7 @@ public class Kunde {
         */
     }
 
-    public boolean isNotfall() {
+    public boolean hatNotfall() {
         return notfall;
     }
     // Ende Methoden
