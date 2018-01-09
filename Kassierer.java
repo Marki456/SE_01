@@ -11,6 +11,8 @@ public class Kassierer {
     }
 
     public double kassieren(Kunde k, double Preis) {
+        if (k.hatBezahlt())
+            return 0;
         String uhrzeit = sdf.format(new Date());
         int Jetzt = Integer.parseInt(uhrzeit);
         double Rechnung = ((double) (k.getAnkunftsZeit() - Jetzt)) * Preis;
