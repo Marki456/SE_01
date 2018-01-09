@@ -8,7 +8,7 @@ public class Kassierer {
 		String uhrzeit = sdf.format(new Date());
 		int Jetzt = Integer.parseInt(uhrzeit);
 		int Rechnung = (k.getAnkunftsZeit() - Jetzt)*Preis;
-		k.setHatBezahlt(true);
+		k.setHatBezahlt();
 		return Rechnung;
     }
 }

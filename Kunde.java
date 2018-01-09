@@ -48,8 +48,8 @@ public class Kunde {
         return hatBezahlt;
     }
 
-    public void setHatBezahlt(boolean hatBezahlt) {
-        this.hatBezahlt = hatBezahlt;
+    public void setHatBezahlt() {
+        this.hatBezahlt = true;
     }
 
     public int getKNr() {
