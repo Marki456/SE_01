@@ -18,9 +18,9 @@ public class Manager {
     private List<Einnahme> einnahmen;
     private TemplateEinnahmen[] summen;
     private List<Kunde> kunden;
-    private Kassierer kassierer = new Kassierer();
+    private Kassierer kassierer;
     private Einweiser einweiser;
-    private Schrankwaerter schrankwaerter = new Schrankwaerter();
+    private Schrankwaerter schrankwaerter;
     // Ende Attribute
     
     // Anfang Methoden
@@ -32,6 +32,8 @@ public class Manager {
             Stellplaetze = StellplatzeProEtage[i] + Stellplaetze;
         }
         
+        kassierer = new Kassierer();
+        schrankwaerter = new Schrankwaerter();
         einnahmen = new ArrayList<>();
         kunden = new ArrayList<>();
         
@@ -57,7 +59,12 @@ public class Manager {
         einnahmen.add(new Einnahme(kassierer.kassieren(kunde, PREIS)));
     }
 
-    public void addKunde(Kunde kunde) {
+    public void verlassen(Kunde kunde) throws KundeHatNichtBezahltException {
+        schrankwaerter.ausfahren(kunde);
+    }
+
+    public void addKunde(Kunde kunde) throws ParkhausIstVollException {
+        schrankwaerter.einfahren(this);
         kunden.add(kunde);
     }
 
