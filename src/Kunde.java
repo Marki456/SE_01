@@ -79,6 +79,10 @@ public class Kunde {
     public boolean hatNotfall() {
         return notfall;
     }
+    
+    public static int getCount() {
+        return count;
+    }
     // Ende Methoden
 
 } // end of Kunde
