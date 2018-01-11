@@ -2,7 +2,7 @@
 public class Einweiser {
 
     private static Einweiser einweiser = null;
-    Stellplatz[][] platz;
+    private Stellplatz[][] platz;
 
     private Einweiser(int[] StellplaetzeproEtage) {
 
