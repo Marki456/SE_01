@@ -39,81 +39,66 @@ Systembetreiber müssen ein Ergonomisches System aufbauen bzw. die Ergonomie mus
 ![alt text](https://github.com/Marki456/SE_01/blob/master/userstorymap.png "Logo Title Text 1")
 
 # Interfaces and JUnit-TestCases
-public interface Platzwirdgespert{<br>
-Einweiser einweisen;<br>
-<br>
-@Override<br>
-boolean platzwirdgespert();<br>
-}<br>
-<br>
-<br>
-import static org.junit.Assert.*;<br>
-<br>
-import org.junit.Assert;<br>
-import org.junit.Test;<br>
-<br>
-public class platzwirdgespertTest implements Platzwirdgespert{<br>
-	public boolean platzwirdgespert() {<br>
-		return (einweisen.testePlatzobfrei(einweisen.suchePlatz()));<br>
-	}<br>
-	<br>
-	public void platztest_platzwirdgespert_Returnsfalse(){<br>
-	assertFalse(platzwirdgespert());	<br>
-	}<br>
-}<br>
-<br>
-public interface Parkhausvoll {<br>
-<br>
-	Manager m;<br>
-	<br>
-	@Override<br>
-	boolean parkhauswirdfrei();<br>
-}<br>
-import static org.junit.Assert.*;<br>
-<br>
-import org.junit.Assert;<br>
-import org.junit.Test;<br>
-<br>
-<br>
-public class ParkhausvollTest implements Parkhausvoll{<br>
-<br>
-	@Override<br>
-	public boolean parkhauswirdfrei() {<br>
-		m.setfreespaces(0);<br>
-		m.ausfahren();<br>
-	return	m.istPlatzrfei();<br>
-	}<br>
-	<br>
-	public void parkhauswirdleer_autosFahreneinbisvoll_Returnstrue(){<br>
-		assertTrue(parkhauswirdfrei());	<br>
-		}<br>
-}<br>
-public interface weißSchulden {<br>
-<br>
-	kassierer k;<br>
-	<br>
-	@Override<br>
-	double berechnetPreis(double Aufenthaltsdauer,double PreisproZeitangabe);<br>	
-}<br>
-import static org.junit.Assert.*;<br>
-<br>
-import org.junit.Assert;<br>
-import org.junit.Test;<br>
-<br>
-public class weißSchuldenTest implements weißSchulden{<br>
-<br>
-	@Override<br>
-	public int berechnetPreis(double Aufenthaltsdauer,double PreisproZeitangabe) {<br>
-		//getPreis("Aufenthaltsdauer,PreisproZeitangabe")<br>
-		double i = k.getPreis(Aufenthaltsdauer , PreisproZeitangabe);<br>
-		return i;<br>
-	}<br>
-<br>
-	public void gibtPreiszuruek_berechnetPreis_ReturnsZahlenwertgroeßer0(){<br>
-		<br>
-		assertTrue(berechnetPreis(0.5,0.5)>0);<br>
-			<br>
-		}<br>
-}<br>
-<br>
+```java
+public interface Platzwirdgespert{
+	Einweiser einweisen;
+	@Override
+	boolean platzwirdgespert();
+}
 
+import static org.junit.Assert.*;
+import org.junit.Assert;
+import org.junit.Test;
+public class platzwirdgespertTest implements Platzwirdgespert{
+	public boolean platzwirdgespert() {
+		return (einweisen.testePlatzobfrei(einweisen.suchePlatz()));
+	}
+	
+	public void platztest_platzwirdgespert_Returnsfalse(){
+		assertFalse(platzwirdgespert());
+	}
+}
+
+public interface Parkhausvoll {
+	Manager m;
+	@Override
+	boolean parkhauswirdfrei();
+}
+
+import static org.junit.Assert.*;
+import org.junit.Assert;
+import org.junit.Test;
+public class ParkhausvollTest implements Parkhausvoll{
+	@Override
+	public boolean parkhauswirdfrei() {
+		m.setfreespaces(0);
+		m.ausfahren();
+		return	m.istPlatzrfei();
+	}
+	public void parkhauswirdleer_autosFahreneinbisvoll_Returnstrue(){
+		assertTrue(parkhauswirdfrei());
+	}
+}
+
+public interface weißSchulden {
+	kassierer k;
+	@Override
+	double berechnetPreis(double Aufenthaltsdauer,double PreisproZeitangabe);
+}
+
+import static org.junit.Assert.*;
+import org.junit.Assert;
+import org.junit.Test;
+public class weißSchuldenTest implements weißSchulden{
+	@Override
+	public int berechnetPreis(double Aufenthaltsdauer,double PreisproZeitangabe) {
+		//getPreis("Aufenthaltsdauer,PreisproZeitangabe")
+		double i = k.getPreis(Aufenthaltsdauer , PreisproZeitangabe);
+		return i;
+	}
+	public void gibtPreiszuruek_berechnetPreis_ReturnsZahlenwertgroeßer0(){
+		assertTrue(berechnetPreis(0.5,0.5)>0)
+	}
+}
+
+```
