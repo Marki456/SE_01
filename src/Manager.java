@@ -38,10 +38,10 @@ public class Manager {
         kunden = new ArrayList<>();
         
         summen = new TemplateEinnahmen[4];
-        summen[0] = new TagesEinnahmen();
-        summen[1] = new WochenEinnahmen();
-        summen[2] = new MonatsEinnahmen();
-        summen[3] = new JahresEinnahmen();
+        summen[TAG] = new TagesEinnahmen();
+        summen[WOCHE] = new WochenEinnahmen();
+        summen[MONAT] = new MonatsEinnahmen();
+        summen[JAHR] = new JahresEinnahmen();
     }
     
     /**
@@ -55,6 +55,17 @@ public class Manager {
         return summen[einnahmeZeitraum].summe(einnahmen);
     }
 
+    /**
+     * 
+     * @param einnahmeZeitraum Eine der folgenden Werte: Manager.TAG, Manager.WOCHE, Manager.MONAT, Manager.JAHR
+     * @return Die Einnahmen in diesem Zeitraum
+     */
+    public List<Double> getEinnahmenAsIntegerList(int einnahmeZeitraum) {
+        if (!(einnahmeZeitraum <= JAHR && TAG <= einnahmeZeitraum))
+            einnahmeZeitraum = JAHR;
+        return summen[einnahmeZeitraum].werte(einnahmen);
+    }
+    
     public void bezahlen(Kunde kunde) {
         einnahmen.add(new Einnahme(kassierer.kassieren(kunde, PREIS)));
     }
