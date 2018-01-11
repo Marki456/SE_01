@@ -18,7 +18,7 @@ public class ParkhausFunktionstest {
     public void setUp() throws ParkhausIstVollException {
     	
     	m = new Manager(23,Plaetze);
-    	einweiser = Einweiser.einweiseranlegen(Plaetze);
+    	einweiser = Einweiser.getInstance(Plaetze);
     
     	m.addKunde(c);
    		m.addKunde(d);
