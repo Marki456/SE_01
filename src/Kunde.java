@@ -11,6 +11,7 @@ public class Kunde {
     private int KNr;
     private boolean parkt;
     private boolean notfall;
+    private String stellplatz;
     // Ende Attribute
 
     // Anfang Methoden
@@ -83,6 +84,13 @@ public class Kunde {
     public static int getCount() {
         return count;
     }
+    public void setStellplatz(String Stellplatz){
+    	this.stellplatz = Stellplatz;
+    }
+    public String getStellplatz(){
+    	return stellplatz;
+    }
+    
     // Ende Methoden
 
 } // end of Kunde
