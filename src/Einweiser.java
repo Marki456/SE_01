@@ -72,5 +72,20 @@ public class Einweiser {
 		platz[i][a].changevergeben();
 		
 	}	
+		public boolean Stellplatzbelegt(String name){
+		int i;
+		int a;
+		//ermittle die Postioin des Punktes im String
+		int position =  0;
+		for(int x = 0; x < name.length();x++){
+			if(name.charAt(x) == '.'){
+				position = x;
+			}
+		}
+		i = Integer.parseInt(name.substring(0, position));
+		a = Integer.parseInt(name.substring(position+1, name.length()));
+		return platz[i][a].getvergeben();
+	}
+	
 }
 
