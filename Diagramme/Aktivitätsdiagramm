@@ -1,0 +1,20 @@
+@startuml
+title __Parkhaus verlassen__
+(*) --> "Ticket eingeben_a"
+--> "Preis ermitteln"
+--> "Geld eingeben"
+if "Hat Geld passend" then
+-->[true] "Ticket entnhemen"
+-right-> "Zum Ausgang Fahren"
+else
+->[false] "Wechselgeld und Ticket entnhemen"
+-->"Zum Ausgang Fahren"
+--> "Ticket eingeben_b"
+-->"Schranke öffnen"
+-->"Ausfahren"
+-->"Schranke schließen"
+
+
+-->[Ending process] (*)
+endif
+@enduml
