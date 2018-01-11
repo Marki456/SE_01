@@ -67,7 +67,10 @@ public class Manager {
     }
     
     public void bezahlen(Kunde kunde) {
-        einnahmen.add(new Einnahme(kassierer.kassieren(kunde, PREIS)));
+        double einnahme = kassierer.kassieren(kunde, PREIS);
+        if (einnahme < 1)
+            return;
+        einnahmen.add(new Einnahme(einnahme));
     }
 
     public void verlassen(Kunde kunde) throws KundeHatNichtBezahltException {
