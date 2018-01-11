@@ -25,7 +25,7 @@ public class Manager {
     
     // Anfang Methoden
     public Manager(int Kassenstand, int[] StellplatzeProEtage) {
-        einweiser = Einweiser.einweiseranlegen(StellplatzeProEtage);
+        einweiser = Einweiser.getInstance(StellplatzeProEtage);
         this.Kassenstand = Kassenstand;
         Stellplaetze = 0;
         for (int i = 0; i < StellplatzeProEtage.length; i++) {
