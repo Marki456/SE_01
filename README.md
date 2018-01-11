@@ -1,8 +1,11 @@
+
+# Lastenheft
 Wenn ein Auto vorfährt muss das Parkhaus die Schranken öffnen sofern es nicht voll ist.<br> 
 Wenn ein Auto im Parkhaus Einfährt muss es einen Platz zugewiesen bekommen.<br>
 Wenn ein Auto das Parkhaus verlassen möchte muss es Zahlen.<br>
 Wenn ein ein Auto das Parkhaus verlässt muss der Platz frei gegeben werden.<br>
 
+# Stakeholder-Analyse
 Stakeholder sind: <br>
 Intern:Mitarbeiter aktiv,Manager passiv,Systembetreiber passviv<br>
 Extern: Kunden aktiv<br>
@@ -20,6 +23,7 @@ Kommunkiationsplan:<br>
 Mitarbeiter müssen gefeuert Werden<br>
 Systembetreiber müssen ein Ergonomisches System aufbauen bzw. die Ergonomie muss definiert werden<br>
 
+# User Stories
 1:Als reisender möchte ich mein auto eine Woche Parken um es sicher in der nähe des Reiseanfangs zu Parken.<br>
 2:Als Pendler Parke ich mein Auto jeden Tag 8 Stunden weil es nah an der Arbeit liegt der Arbeit.<br>
 3:Als Frau Parke ich mein Auto in einem Parkhaus weil ich mich dort sicherer fühle als auf offenen Parkplätzen.<br>
@@ -31,12 +35,10 @@ Systembetreiber müssen ein Ergonomisches System aufbauen bzw. die Ergonomie mus
 9:Als Kunde muss ich wissen ob das Parkhaus Voll ist ,weil ich es sonst umsonst betreten könnte.<br>
 10:Als Kunde möchte ich das sich die Schranke beim verlassen des Parkhauses öffnet wenn ich bezahlt habe um es zu verlassen.<br>
 
+# Story Map
+![alt text](https://github.com/Marki456/SE_01/blob/master/userstorymap.png "Logo Title Text 1")
 
-
-
----------------------------------<br>
-<br>
-<br>
+# Interfaces and JUnit-TestCases
 public interface Platzwirdgespert{<br>
 Einweiser einweisen;<br>
 <br>
@@ -44,7 +46,6 @@ Einweiser einweisen;<br>
 boolean platzwirdgespert();<br>
 }<br>
 <br>
-----<br>
 <br>
 import static org.junit.Assert.*;<br>
 <br>
@@ -61,7 +62,6 @@ public class platzwirdgespertTest implements Platzwirdgespert{<br>
 	}<br>
 }<br>
 <br>
-----<br>
 public interface Parkhausvoll {<br>
 <br>
 	Manager m;<br>
@@ -69,7 +69,6 @@ public interface Parkhausvoll {<br>
 	@Override<br>
 	boolean parkhauswirdfrei();<br>
 }<br>
-----<br>
 import static org.junit.Assert.*;<br>
 <br>
 import org.junit.Assert;<br>
@@ -89,7 +88,6 @@ public class ParkhausvollTest implements Parkhausvoll{<br>
 		assertTrue(parkhauswirdfrei());	<br>
 		}<br>
 }<br>
-----<br>
 public interface weißSchulden {<br>
 <br>
 	kassierer k;<br>
@@ -97,7 +95,6 @@ public interface weißSchulden {<br>
 	@Override<br>
 	double berechnetPreis(double Aufenthaltsdauer,double PreisproZeitangabe);<br>	
 }<br>
-----<br>
 import static org.junit.Assert.*;<br>
 <br>
 import org.junit.Assert;<br>
@@ -118,6 +115,5 @@ public class weißSchuldenTest implements weißSchulden{<br>
 			<br>
 		}<br>
 }<br>
-----<br>
 <br>
 
