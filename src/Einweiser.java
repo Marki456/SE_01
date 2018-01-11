@@ -6,7 +6,7 @@ public class Einweiser {
 
     Einweiser(int[] StellplaetzeproEtage) {
 
-        //suche groesste Etage
+        //suche grÃ¶ÃŸte Etage
         int max = 0;
         for (int i = 0; i < StellplaetzeproEtage.length; i++) {
             if (max < StellplaetzeproEtage[i]) {
