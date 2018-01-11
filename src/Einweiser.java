@@ -1,10 +1,10 @@
 
 public class Einweiser {
 
-    private static Einweiser einweiser = null;
+    static Einweiser e;
     Stellplatz[][] platz;
 
-    private Einweiser(int[] StellplaetzeproEtage) {
+    Einweiser(int[] StellplaetzeproEtage) {
 
         //suche groesste Etage
         int max = 0;
@@ -38,11 +38,11 @@ public class Einweiser {
 
     }
 
-    public static Einweiser getInstance(int[] StellplaetzeproEtage) {
-        if (einweiser == null) {
-            einweiser = new Einweiser(StellplaetzeproEtage);
+    public static final Einweiser einweiseranlegen(int[] StellplaetzeproEtage) {
+        if (e == null) {
+            e = new Einweiser(StellplaetzeproEtage);
         }
-        return einweiser;
+        return e;
     }
 
     public String getStellplatz() {
