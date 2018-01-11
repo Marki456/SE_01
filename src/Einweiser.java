@@ -30,7 +30,7 @@ public class Einweiser {
         //Gibt exestierenden Stellplaetzen einen Namen nach dem Muster Etage.Stellpaltz+1  --> z.B. 0.1 --> Etage = 0 Stellplatz = 1
         for (int i = 0; i < tmp.length; i++) {
             for (int a = 0; a < tmp[0].length; a++) {
-                tmp[i][a].setName(String.valueOf(i + "." + (a)));
+                tmp[i][a].setName(String.valueOf(i + "." + a));
             }
         }
 
