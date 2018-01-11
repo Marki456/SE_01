@@ -15,6 +15,6 @@ public class Zeit {
     }
     
     public static void erhöheOffset(int offset){
-        Zeit.offset += offset;
+        Zeit.offset -= offset;
     }
 }
