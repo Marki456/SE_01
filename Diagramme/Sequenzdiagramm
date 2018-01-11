@@ -1,0 +1,38 @@
+@startuml
+title Auto im Parkhaus parken
+skinparam sequenceParticipant underline
+hide footbox
+actor ":Kunde" as A
+participant "Parkhaus" as C
+participant "Einweiser" as B
+participant "Ticketautomat" as E
+participant "Schrankwärter" as S
+activate A
+A -> C: Parkhaus frei?
+activate C
+opt Hat freien Platz
+C -> B: freien Platz Finden
+activate B
+C <<-- B: Platznummer mitteilen
+deactivate B
+C -> E: Ticket erstellen
+activate E
+C<-- E: Ticket übermitteln
+deactivate E
+
+
+A <<- C: Platznummer und Ticket übermitteln
+
+
+A -> C:Möchte Einfahren
+C -> S: Schranke öffnen
+activate S
+A <--C: Schnranke offen
+A ->C: fährt ein
+C -> S: Schranke schließen
+C <-- S: Schranke geschlossen
+deactivate S
+
+
+end
+@enduml
