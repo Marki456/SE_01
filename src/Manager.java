@@ -61,12 +61,14 @@ public class Manager {
 
     public void verlassen(Kunde kunde) throws KundeHatNichtBezahltException {
         schrankwaerter.ausfahren(kunde);
+        einweiser.Stellplatzchange(kunde.getStellplatz());
         ++Stellplaetze;
     }
 
-    public void addKunde(Kunde kunde) throws ParkhausIstVollException {
+    public void addKunde(Kunde k) throws ParkhausIstVollException {
         schrankwaerter.einfahren(this);
-        kunden.add(kunde);
+        k.setStellplatz(einweiser.getStellplatz());
+        kunden.add(k);
         --Stellplaetze;
     }
 
