@@ -1,5 +1,3 @@
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Einnahme {
     private int timestamp;
@@ -10,9 +8,7 @@ public class Einnahme {
         this.betrag = betrag;
     }
     public Einnahme(double betrag) {
-        SimpleDateFormat sdf = new SimpleDateFormat("HH");
-        String uhrzeit = sdf.format(new Date());
-        this.timestamp = Integer.parseInt(uhrzeit);
+        this.timestamp = Zeit.getZeit();
         
         this.betrag = betrag;
     }

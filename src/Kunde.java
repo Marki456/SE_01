@@ -1,7 +1,4 @@
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
-
 public class Kunde {
 
     // Anfang Attribute
@@ -20,9 +17,7 @@ public class Kunde {
         count++;
         parkt = true;
         notfall = false;
-        SimpleDateFormat sdf = new SimpleDateFormat("HH");
-        String uhrzeit = sdf.format(new Date());
-        ankunftsZeit = Integer.parseInt(uhrzeit);
+        ankunftsZeit = Zeit.getZeit();
     }
     
     public Kunde(int ankunftsZeit){
