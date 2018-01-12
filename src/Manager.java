@@ -19,7 +19,7 @@ public class Manager {
     private TemplateEinnahmen[] summen;
     private List<Kunde> kunden;
     private Einweiser einweiser;
-    private Schrankwaerter schrankwaerter;
+    private Schrankenwaerter schrankwaerter;
     // Ende Attribute
     
     // Anfang Methoden
@@ -31,7 +31,7 @@ public class Manager {
             Stellplaetze = StellplatzeProEtage[i] + Stellplaetze;
         }
         
-        schrankwaerter = new Schrankwaerter();
+        schrankwaerter = new Schrankenwaerter();
         einnahmen = new ArrayList<>();
         kunden = new ArrayList<>();
         

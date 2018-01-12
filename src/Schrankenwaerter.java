@@ -1,5 +1,5 @@
 
-public class Schrankwaerter {
+public class Schrankenwaerter {
     
     public void einfahren(Manager manager) throws ParkhausIstVollException {
         if (manager.getStellplaetze() == 0)
