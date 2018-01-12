@@ -11,7 +11,7 @@ public class Manager {
     public static final int JAHR = 3;
     
     // Anfang Attribute
-    private final double PREIS = 5;
+    private static final double PREIS = 5;
     private int[] Oeffnungszeit = {0, 23};
     private int Stellplaetze;
     private int Kassenstand;
@@ -82,6 +82,10 @@ public class Manager {
         k.setStellplatz(einweiser.getStellplatz());
         kunden.add(k);
         --Stellplaetze;
+    }
+    
+    public static double getPreis() {
+        return PREIS;
     }
 
     public List<Kunde> getKunden() {
