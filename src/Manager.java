@@ -18,7 +18,6 @@ public class Manager {
     private List<Einnahme> einnahmen;
     private TemplateEinnahmen[] summen;
     private List<Kunde> kunden;
-    private Kassierer kassierer;
     private Einweiser einweiser;
     private Schrankwaerter schrankwaerter;
     // Ende Attribute
@@ -32,7 +31,6 @@ public class Manager {
             Stellplaetze = StellplatzeProEtage[i] + Stellplaetze;
         }
         
-        kassierer = new Kassierer();
         schrankwaerter = new Schrankwaerter();
         einnahmen = new ArrayList<>();
         kunden = new ArrayList<>();
@@ -67,7 +65,7 @@ public class Manager {
     }
     
     public void bezahlen(Kunde kunde) {
-        double einnahme = kassierer.kassieren(kunde, PREIS);
+        double einnahme = Kassierer.kassieren(kunde, PREIS);
         if (einnahme < 1)
             return;
         einnahmen.add(new Einnahme(einnahme));
