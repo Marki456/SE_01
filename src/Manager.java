@@ -72,8 +72,9 @@ public class Manager {
     }
 
     public void verlassen(Kunde kunde) throws KundeHatNichtBezahltException {
+        if (kunde.istParkt())
+            einweiser.Stellplatzchange(kunde.getStellplatz());
         schrankwaerter.ausfahren(kunde);
-        einweiser.Stellplatzchange(kunde.getStellplatz());
         ++Stellplaetze;
     }
 
